@@ -38,7 +38,10 @@ We've generated and included in our s3 bucket the following datasets. Please den
 
 #### Integrating automatic tests to benchmark insert/write performance
 
-So for integrating automatic tests to benchmark insert/write performance you need to retrieve the project and its dependencies:
+
+For integrating automatic tests to benchmark insert/write performance you need to retrieve the project and its dependencies:
+
+
 0) Install pre-requesites
     ```bash
     $ git clone https://github.com/filipecosta90/RedisModulesBenchmarks.git
