@@ -48,7 +48,7 @@ So for integrating automatic tests to benchmark insert/write performance you nee
 
 1) Run benchmark insert/write performance passing as argument the datasets to be tested, the Redis and RedisTimeSeries versions being used, as well as the architecture and OS of the machine running it:
     ```bash
-    $ python3 load.py --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
+    $ python3 load.py --benchmarks="redistimeseries-data-3days-100devices-10metrics" --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
     ```
 --------
 
@@ -61,7 +61,7 @@ The complete test log will be saved on the performance s3 bucket for further ana
 
 An example execution output:
 ```text
-$ python3 load.py --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
+$ python3 load.py --benchmarks="redistimeseries-data-3days-100devices-10metrics" --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
 INFO:botocore.credentials:Found credentials in environment variables.
 INFO:root:Will run tsbs_load_redistimeseries for dataset redistimeseries-data-3days-100devices-10metrics
 INFO:root:Downloading: benchmarks/redistimeseries/tsbs/gz/redistimeseries-data-3days-100devices-10metrics.gz

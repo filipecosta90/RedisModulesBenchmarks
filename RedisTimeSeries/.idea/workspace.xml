@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="001d2a64-de4f-426c-b165-68fd864e7002" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tsbs/Readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load.py" beforeDir="false" afterPath="$PROJECT_DIR$/tsbs/load.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tsbs/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsbs/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/tsbs/Readme.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +15,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tsbs/load.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="207" column="79" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="79" />
+            <state relative-caret-position="164">
+              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="61" />
               <folding>
                 <element signature="e#111#126#0" expanded="true" />
               </folding>
@@ -31,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/tsbs/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="318">
-                <caret line="99" column="38" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+              <first_editor relative-caret-position="454">
+                <caret line="56" column="155" selection-start-line="56" selection-start-column="155" selection-end-line="56" selection-end-column="155" />
               </first_editor>
               <second_editor />
             </state>
@@ -219,8 +216,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tsbs/load.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="207" column="79" selection-start-line="207" selection-start-column="23" selection-end-line="207" selection-end-column="79" />
+        <state relative-caret-position="164">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="61" />
           <folding>
             <element signature="e#111#126#0" expanded="true" />
           </folding>
@@ -230,8 +227,8 @@
     <entry file="file://$PROJECT_DIR$/tsbs/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="318">
-            <caret line="99" column="38" selection-start-line="99" selection-start-column="38" selection-end-line="99" selection-end-column="38" />
+          <first_editor relative-caret-position="454">
+            <caret line="56" column="155" selection-start-line="56" selection-start-column="155" selection-end-line="56" selection-end-column="155" />
           </first_editor>
           <second_editor />
         </state>
