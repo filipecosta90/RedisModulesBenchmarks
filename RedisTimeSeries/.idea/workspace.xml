@@ -28,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/tsbs/Readme.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="303">
-                <caret line="43" selection-start-line="43" selection-end-line="43" />
+              <first_editor relative-caret-position="381">
+                <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
               </first_editor>
               <second_editor />
             </state>
@@ -179,7 +179,7 @@
     <frame x="0" y="23" width="1680" height="943" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17480409" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3779385" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -227,8 +227,8 @@
     <entry file="file://$PROJECT_DIR$/tsbs/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="303">
-            <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <first_editor relative-caret-position="381">
+            <caret line="32" column="19" selection-start-line="32" selection-start-column="19" selection-end-line="32" selection-end-column="19" />
           </first_editor>
           <second_editor />
         </state>

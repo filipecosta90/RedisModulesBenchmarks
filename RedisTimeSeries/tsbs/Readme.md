@@ -25,16 +25,17 @@ line program.
 
 We've generated and included in our s3 bucket the following datasets. Please denote that some are not fit for pipeline due to the timetaken to run:
 
-|Query type|Cardinality|Rows|Benchmark name| Expected time to complete on pipeline | Fit for pipeline?
-|:---|:---|:---|:---|:---|:---|
-|1 month interval for 100 devices x 1 metric| 100 | 25M | redistimeseries-data-1month-100devices-1metric | | No
-|3 days interval for 100 devices x 10 metrics| 1000 | 2.6M | redistimeseries-data-3days-100devices-10metrics | 60s | Yes
-|1 month interval for 100 devices x 10 metrics| 1000 | 25M | redistimeseries-data-1month-100devices-10metrics | | No
-|3 days for 4,000 devices x 10 metrics| 40K | 25M | redistimeseries-data-3days-4000devices-10metrics| | No
-|3 minutes for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-data-3minutes-4000devices-10metrics| | Yes
-|3 hours for 4,000 devices x 10 metrics| 1M | 26M | redistimeseries-data-3hours-100Kdevices-10metrics| | No
-|3 minutes for 4,000 devices x 10 metrics| 1M | 2.6M | redistimeseries-data-3minutes-100Kdevices-10metrics | | Yes
-|3 minutes for 1,000,000 devices x 10 metrics| 10M | 26M | redistimeseries-data-3minutes-1Mdevices-10metrics| | No
+|Query type|Cardinality|Rows|Benchmark name| Expected time to complete on pipeline | Fit for pipeline?| Fit for nighly?
+|:---|:---|:---|:---|:---|:---|:---|
+|1 month interval for 100 devices x 1 metric| 100 | 25M | redistimeseries-data-1month-100devices-1metric | | No | Yes
+|3 days interval for 100 devices x 10 metrics| 1000 | 2.6M | redistimeseries-data-3days-100devices-10metrics | 60s | Yes | No
+|1 month interval for 100 devices x 10 metrics| 1000 | 25M | redistimeseries-data-1month-100devices-10metrics | | No | Yes
+|3 days for 4,000 devices x 10 metrics| 40K | 25M | redistimeseries-data-3days-4000devices-10metrics| | No| Yes
+|3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-data-3hours-4000devices-10metrics| | Yes | No
+|3 hours for 100,000 devices x 10 metrics| 1M | 26M | redistimeseries-data-3hours-100Kdevices-10metrics| | No| Yes
+|3 minutes for 100,000 devices x 10 metrics| 1M | 2.7M | redistimeseries-data-3minutes-100Kdevices-10metrics | 100s | Yes | No
+|3 minutes for 1,000,000 devices x 10 metrics| 10M | 26M | redistimeseries-data-3minutes-1Mdevices-10metrics| | No| Yes
+|30 seconds for 1,000,000 devices x 10 metrics| 10M | 2.7M | redistimeseries-data-30seconds-1Mdevices-10metrics|  | Yes | No
 
 #### Integrating automatic tests to benchmark insert/write performance
 
