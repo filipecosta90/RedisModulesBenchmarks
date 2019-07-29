@@ -31,7 +31,7 @@ We've generated and included in our s3 bucket the following datasets. Please den
 |3 days interval for 100 devices x 10 metrics| 1000 | 2.6M | redistimeseries-data-3days-100devices-10metrics | 60s | Yes | No
 |1 month interval for 100 devices x 10 metrics| 1000 | 25M | redistimeseries-data-1month-100devices-10metrics | | No | Yes
 |3 days for 4,000 devices x 10 metrics| 40K | 25M | redistimeseries-data-3days-4000devices-10metrics| | No| Yes
-|3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-data-3hours-4000devices-10metrics| | Yes | No
+|3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-data-3hours-4000devices-10metrics| 90s | Yes | No
 |3 hours for 100,000 devices x 10 metrics| 1M | 26M | redistimeseries-data-3hours-100Kdevices-10metrics| | No| Yes
 |3 minutes for 100,000 devices x 10 metrics| 1M | 2.7M | redistimeseries-data-3minutes-100Kdevices-10metrics | 100s | Yes | No
 |3 minutes for 1,000,000 devices x 10 metrics| 10M | 26M | redistimeseries-data-3minutes-1Mdevices-10metrics| | No| Yes
