@@ -1,5 +1,5 @@
 
-### Auto benchmarking insert/write performance
+### Auto benchmarking insert/write + query performance
 
 #### Context
 
@@ -23,21 +23,26 @@ line program.
 
 #### Included datasets
 
-We've generated and included in our s3 bucket the following datasets. Please denote that some are not fit for pipeline due to the timetaken to run:
+We've generated and included in our s3 bucket the following datasets. Please denote the time taken to run each dataset:
 
-|Query type|Cardinality|Rows|Benchmark name| Expected time to complete on pipeline | Fit for pipeline?| Fit for nighly?
-|:---|:---|:---|:---|:---|:---|:---|
-|1 month interval for 100 devices x 1 metric| 100 | 25M | redistimeseries-data-1month-100devices-1metric | | No | Yes
-|3 days interval for 100 devices x 10 metrics| 1000 | 2.6M | redistimeseries-data-3days-100devices-10metrics | 60s | Yes | No
-|1 month interval for 100 devices x 10 metrics| 1000 | 25M | redistimeseries-data-1month-100devices-10metrics | | No | Yes
-|3 days for 4,000 devices x 10 metrics| 40K | 25M | redistimeseries-data-3days-4000devices-10metrics| | No| Yes
-|3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-data-3hours-4000devices-10metrics| 90s | Yes | No
-|3 hours for 100,000 devices x 10 metrics| 1M | 26M | redistimeseries-data-3hours-100Kdevices-10metrics| | No| Yes
-|3 minutes for 100,000 devices x 10 metrics| 1M | 2.7M | redistimeseries-data-3minutes-100Kdevices-10metrics | 100s | Yes | No
-|3 minutes for 1,000,000 devices x 10 metrics| 10M | 26M | redistimeseries-data-3minutes-1Mdevices-10metrics| | No| Yes
-|30 seconds for 1,000,000 devices x 10 metrics| 10M | 2.7M | redistimeseries-data-30seconds-1Mdevices-10metrics|  | Yes | No
+|Query type|Cardinality|Rows|Benchmark name| Expected time to complete on pipeline | Fit for pipeline?|
+|:---|:---|:---|:---|:---|:---|
+|3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-data-3hours-4000devices-10metrics| 90s | Yes 
 
-#### Integrating automatic tests to benchmark insert/write performance
+
+#### Included queries
+
+We've generated and included in our s3 bucket the following datasets. Please denote the time taken to run each dataset:
+
+|Query number |Query type | Query description |  Used data set | Cardinality|Rows|Benchmark name| Expected time to complete on pipeline | Fit for pipeline?|
+|:---|:---|:---|:---|:---|:---|:---|:---|:---|
+1 | single-groupby-1-1-1 | Simple aggregate (MAX) on one metric for 1 host, every 5 mins for 1 hour | 3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-queries-3hours-4000devices-10metrics-single-groupby-1-1-1 |  |  
+2 | single-groupby-1-1-12 | Simple aggregate (MAX) on one metric for 1 host, every 5 mins for 12 hours | 3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-queries-3hours-4000devices-10metrics-single-groupby-1-1-12 |  |  
+9 |  double-groupby-1 | Aggregate on across both time and host, giving the average of 1 CPU metric per host per hour for 24 hours | 3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-queries-3hours-4000devices-10metrics-double-groupby-1 |  |  
+11 |  double-groupby-all | Aggregate on across both time and host, giving the average of all (10) CPU metrics per host per hour for 24 hours | 3 hours for 4,000 devices x 10 metrics| 40K | 2.6M | redistimeseries-queries-3hours-4000devices-10metrics-double-groupby-all |  |  
+
+
+#### Integrating automatic tests to benchmark insert/write + query performance
 
 
 For integrating automatic tests to benchmark insert/write performance you need to retrieve the project and its dependencies:
@@ -46,13 +51,13 @@ For integrating automatic tests to benchmark insert/write performance you need t
 0) Install pre-requesites
     ```bash
     $ git clone https://github.com/filipecosta90/RedisModulesBenchmarks.git
-    $ cd RedisTimeSeries/tsbs
+    $ cd RedisTimeSeries/tsbs/load_query
     $ pip3 install -r requirements.txt
     ```
 
 1) Run benchmark insert/write performance passing as argument the datasets to be tested, the Redis and RedisTimeSeries versions being used, as well as the architecture and OS of the machine running it:
     ```bash
-    $ python3 load.py --benchmarks="redistimeseries-data-3days-100devices-10metrics" --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
+    $ python3 load_query.py --load="redistimeseries-queries-3hours-4000devices-10metrics" --benchmarks="redistimeseries-queries-3hours-4000devices-10metrics-single-groupby-1-1-1" --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
     ```
 --------
 
@@ -65,7 +70,7 @@ The complete test log will be saved on the performance s3 bucket for further ana
 
 An example execution output:
 ```text
-$ python3 load.py --benchmarks="redistimeseries-data-3days-100devices-10metrics" --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
+$ python3 load_query.py --load="redistimeseries-queries-3hours-4000devices-10metrics" --benchmarks="redistimeseries-queries-3hours-4000devices-10metrics-single-groupby-1-1-1" --redistimeseries_version "oss_1.0.0" --redis_version "oss_5.0.4" --verbose --os "darwin" --arch "amd64"
 INFO:botocore.credentials:Found credentials in environment variables.
 INFO:root:Will run tsbs_load_redistimeseries for dataset redistimeseries-data-3days-100devices-10metrics
 INFO:root:Downloading: benchmarks/redistimeseries/tsbs/gz/redistimeseries-data-3days-100devices-10metrics.gz
